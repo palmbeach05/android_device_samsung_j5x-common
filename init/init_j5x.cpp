@@ -58,9 +58,9 @@ void init_target_properties(void)
 		set_lte_properties();
 	}
 	else if (bootloader.find("J510H") == 0) {
-		device = (char *)"j5x3g";
-		model = (char *)"SM-J510H";
-		set_gsm_properties();
+		device = (char *)"j5xnlte";
+		model = (char *)"SM-J510F";
+		set_lte_properties();
 	}
 	else {
 		return;

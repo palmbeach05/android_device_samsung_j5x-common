@@ -38,7 +38,6 @@
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
 
 #define SERIAL_NUMBER_FILE "/efs/FactoryApp/serial_no"
@@ -47,6 +46,9 @@ using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
 using android::init::property_set;
+
+namespace android {
+namespace init {
 
 void property_override(char const prop[], char const value[])
 {
@@ -203,3 +205,5 @@ void vendor_load_properties()
 	/* set the properties */
 	set_target_properties(device, model);
 }
+}  // namespace init
+} // namespace android
